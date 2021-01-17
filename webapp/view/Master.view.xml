@@ -3,20 +3,19 @@
 	xmlns="sap.m"
 	xmlns:semantic="sap.f.semantic"
 	xmlns:mvc="sap.ui.core.mvc">
-
-	<semantic:SemanticPage
+    <semantic:SemanticPage
 		id="masterPage"
 		preserveHeaderStateOnScroll="true"
 		toggleHeaderOnTitleClick="false">
-		<semantic:titleHeading>
-			<Title
+        <semantic:titleHeading>
+            <Title
 				id="masterPageTitle"
 				text="{masterView>/title}"
 				level="H2"/>
-		</semantic:titleHeading>
-		<semantic:content>
-			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
-			<List
+        </semantic:titleHeading>
+        <semantic:content>
+            <!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+            <List
 				id="list"
 				width="auto"
 				class="sapFDynamicPageAlignContent"
@@ -38,54 +37,54 @@
 				growingScrollToLoad="true"
 				updateFinished=".onUpdateFinished"
 				selectionChange=".onSelectionChange">
-				<infoToolbar>
-					<Toolbar
+                <infoToolbar>
+                    <Toolbar
 						active="true"
 						id="filterBar"
 						visible="{masterView>/isFilterBarVisible}"
 						press=".onOpenViewSettings">
-						<Title
+                        <Title
 							id="filterBarLabel"
 							text="{masterView>/filterBarLabel}"
 							level="H3"/>
-					</Toolbar>
-				</infoToolbar>
-				<headerToolbar>
-					<OverflowToolbar>
-						<SearchField
+                    </Toolbar>
+                </infoToolbar>
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <SearchField
 							id="searchField"
 							showRefreshButton="true"
 							tooltip="{i18n>masterSearchTooltip}"
 							search=".onSearch"
 							width="auto">
-							<layoutData>
-								<OverflowToolbarLayoutData
+                            <layoutData>
+                                <OverflowToolbarLayoutData
 									minWidth="150px"
 									maxWidth="240px"
 									shrinkable="true"
 									priority="NeverOverflow"/>
-							</layoutData>
-						</SearchField>
-						<ToolbarSpacer/>
-						<Button
+                            </layoutData>
+                        </SearchField>
+                        <ToolbarSpacer/>
+                        <Button
 							id="sortButton"
 							press=".onOpenViewSettings"
 							icon="sap-icon://sort"
 							type="Transparent"/>
-						<Button
+                        <Button
 							id="filterButton"
 							press=".onOpenViewSettings"
 							icon="sap-icon://filter"
 							type="Transparent"/>
-						<Button
+                        <Button
 							id="groupButton"
 							press=".onOpenViewSettings"
 							icon="sap-icon://group-2"
 							type="Transparent"/>
-					</OverflowToolbar>
-				</headerToolbar>
-				<items>
-					<ObjectListItem
+                    </OverflowToolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem
 						type="Navigation"
 						press=".onSelectionChange"
 						title="{ID}"
@@ -93,12 +92,12 @@
 							Price
 						}"
 						>
-						<attributes>
-						<ObjectAttribute text="{Supplier/Name}" />
-					</attributes>
-					</ObjectListItem>
-				</items>
-			</List>
-		</semantic:content>
-	</semantic:SemanticPage>
+                        <attributes>
+                            <ObjectAttribute text="{Supplier/Name}" />
+                        </attributes>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </semantic:content>
+    </semantic:SemanticPage>
 </mvc:View>
